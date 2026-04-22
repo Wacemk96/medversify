@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedVersify — Brand Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #0D2B4E;
+    --paper:  #F7F9FC;
+    --teal:   #0A8C74;
+    --gold:   #E8B84B;
+    --green:  #2D9E6B;
+    --red:    #C94B35;
+    --navy-80: rgba(13,43,78,0.8);
+    --teal-10: rgba(10,140,116,0.10);
+    --teal-20: rgba(10,140,116,0.20);
+    --navy-06: rgba(13,43,78,0.06);
+    --navy-12: rgba(13,43,78,0.12);
+    --gold-15: rgba(232,184,75,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--navy);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ─── STICKY NAV ─── */
+  .brand-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 56px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .brand-nav .logo-mark {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 17px;
+    color: #fff; letter-spacing: -0.3px;
+  }
+  .brand-nav .logo-mark span { color: var(--teal); }
+  .brand-nav ul {
+    display: flex; gap: 4px; list-style: none;
+  }
+  .brand-nav ul a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 12px; font-weight: 500;
+    padding: 6px 12px; border-radius: 6px;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    transition: color .15s, background .15s;
+  }
+  .brand-nav ul a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+
+  /* ─── SECTION SHELL ─── */
+  .section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+  .section-dark { background: var(--navy); }
+  .section-dark-wrap { background: var(--navy); }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 8px;
+  }
+  .section-dark .section-label { color: rgba(10,140,116,0.85); }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 32px;
+    line-height: 1.15; letter-spacing: -0.5px;
+    margin-bottom: 40px;
+  }
+  .section-dark .section-title { color: #fff; }
+
+  hr.divider {
+    border: none; border-top: 1px solid var(--navy-12);
+    margin: 0 40px;
+  }
+  .divider-dark { border-top: 1px solid rgba(255,255,255,0.08); }
+
+  /* ─── HERO COVER ─── */
+  .hero-cover {
+    background: var(--navy);
+    padding: 100px 40px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(10,140,116,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 60px; }
+  .hero-text {}
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--teal);
+    letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 52px; line-height: 1.07;
+    letter-spacing: -1px; color: #fff;
+    max-width: 560px;
+    text-wrap: balance;
+  }
+  .hero-headline em { color: var(--teal); font-style: normal; }
+  .hero-sub {
+    margin-top: 20px;
+    color: rgba(255,255,255,0.58);
+    font-size: 16px; line-height: 1.65;
+    max-width: 460px;
+  }
+  .hero-actions { display: flex; gap: 12px; margin-top: 36px; }
+
+  .hero-stat-cluster {
+    display: flex; flex-direction: column; gap: 14px;
+    flex-shrink: 0;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    padding: 20px 24px;
+    backdrop-filter: blur(8px);
+    min-width: 180px;
+  }
+  .stat-card .stat-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; font-size: 30px;
+    color: #fff; line-height: 1;
+  }
+  .stat-card .stat-num .stat-unit { font-size: 18px; color: var(--teal); }
+  .stat-card .stat-label {
+    font-size: 12px; color: rgba(255,255,255,0.5);
+    margin-top: 6px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .stat-card.gold-accent { border-color: rgba(232,184,75,0.3); }
+  .stat-card.gold-accent .stat-num .stat-unit { color: var(--gold); }
+
+  /* ─── PALETTE ─── */
+  .palette-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 16px; }
+  .swatch-card {
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(13,43,78,0.10);
+  }
+  .swatch-block { height: 80px; }
+  .swatch-info {
+    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid var(--navy-06);
+    border-top: none; border-radius: 0 0 12px 12px;
+  }
+  .swatch-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 12px;
+    color: var(--navy);
+  }
+  .swatch-hex {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #7a8a9a;
+    margin-top: 2px;
+  }
+  .swatch-role {
+    font-size: 11px; color: #9aabb8; margin-top: 4px;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  .type-stack { display: flex; flex-direction: column; gap: 32px; }
+  .type-row {
+    display: flex; align-items: baseline; gap: 32px;
+    padding: 28px 32px;
+    background: #fff;
+    border: 1px solid var(--navy-06);
+    border-radius: 14px;
+  }
+  .type-meta {
+    flex-shrink: 0; width: 160px;
+  }
+  .type-meta .font-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 12px;
+    color: var(--navy); text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .type-meta .font-use {
+    font-size: 11px; color: #9aabb8; margin-top: 4px;
+  }
+  .type-sample { flex: 1; }
+  .type-sample.display {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 42px; line-height: 1.1;
+    letter-spacing: -0.5px; color: var(--navy);
+  }
+  .type-sample.heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 26px; line-height: 1.25;
+    color: var(--navy);
+  }
+  .type-sample.body-copy {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; font-size: 15px; line-height: 1.7;
+    color: #3d5166;
+  }
+  .type-sample.label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500; font-size: 13px;
+    color: #6b7e90; text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .type-sample.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; font-size: 28px;
+    color: var(--navy); letter-spacing: -0.5px;
+  }
+  .type-sample.mono span { color: var(--teal); }
+
+  /* ─── ICONS ─── */
+  .icons-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; }
+  .icon-card {
+    background: #fff;
+    border: 1px solid var(--navy-06);
+    border-radius: 14px;
+    padding: 24px 16px 18px;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 12px;
+    transition: box-shadow .15s, transform .15s;
+  }
+  .icon-card:hover {
+    box-shadow: 0 8px 24px rgba(13,43,78,0.10);
+    transform: translateY(-2px);
+  }
+  .icon-card svg { width: 40px; height: 40px; }
+  .icon-label {
+    font-size: 11px; font-weight: 500;
+    color: #7a8a9a; text-align: center;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+  .icons-dark-row {
+    display: grid; grid-template-columns: repeat(8,1fr); gap: 16px;
+    margin-top: 16px;
+  }
+  .icon-card-dark {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    padding: 24px 16px 18px;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 12px;
+  }
+  .icon-card-dark svg { width: 40px; height: 40px; }
+  .icon-card-dark .icon-label { color: rgba(255,255,255,0.35); }
+
+  /* ─── BUTTONS ─── */
+  .btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Inter', sans-serif; font-weight: 600;
+    font-size: 14px; letter-spacing: 0.02em;
+    border-radius: 8px; border: none; cursor: pointer;
+    padding: 11px 22px;
+    transition: all .15s;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: var(--teal); color: #fff;
+  }
+  .btn-primary:hover { background: #098568; box-shadow: 0 4px 16px rgba(10,140,116,0.35); transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: var(--navy); color: #fff;
+  }
+  .btn-secondary:hover { background: #0e3359; box-shadow: 0 4px 16px rgba(13,43,78,0.30); transform: translateY(-1px); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--teal);
+    border: 1.5px solid var(--teal);
+  }
+  .btn-ghost:hover { background: var(--teal-10); }
+
+  .btn-gold {
+    background: var(--gold); color: var(--navy);
+  }
+  .btn-gold:hover { background: #e0ad35; box-shadow: 0 4px 16px rgba(232,184,75,0.35); transform: translateY(-1px); }
+
+  .btn-destructive {
+    background: var(--red); color: #fff;
+  }
+  .btn-destructive:hover { background: #b84230; transform: translateY(-1px); }
+
+  .btn-ghost-white {
+    background: transparent; color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.35);
+  }
+  .btn-ghost-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+  .btn-sm { padding: 7px 14px; font-size: 12px; border-radius: 6px; }
+  .btn-lg { padding: 15px 30px; font-size: 16px; border-radius: 10px; }
+
+  .component-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: #9aabb8;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 12px; display: block;
+  }
+  .component-group { margin-bottom: 40px; }
+
+  /* ─── INPUTS ─── */
+  .input-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .field-group { display: flex; flex-direction: column; gap: 6px; }
+  .field-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; font-weight: 600;
+    color: var(--navy); letter-spacing: 0.02em;
+  }
+  .field-input {
+    font-family: 'Inter', sans-serif; font-size: 14px;
+    padding: 10px 14px;
+    border: 1.5px solid #cdd5de;
+    border-radius: 8px;
+    background: #fff; color: var(--navy);
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .field-input:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(10,140,116,0.12);
+  }
+  .field-input.error {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(201,75,53,0.10);
+  }
+  .field-input.success {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(45,158,107,0.10);
+  }
+  .field-hint { font-size: 12px; }
+  .field-hint.default { color: #9aabb8; }
+  .field-hint.error { color: var(--red); }
+  .field-hint.success { color: var(--green); }
+  .field-input::placeholder { color: #b0bec8; }
+
+  /* ─── SERVICE CARDS ─── */
+  .service-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .service-card {
+    background: #fff;
+    border: 1px solid var(--navy-06);
+    border-radius: 16px;
+    padding: 28px 24px;
+    transition: box-shadow .2s, transform .2s;
+    cursor: default;
+  }
+  .service-card:hover {
+    box-shadow: 0 10px 32px rgba(13,43,78,0.11);
+    transform: translateY(-3px);
+    border-color: var(--teal-20);
+  }
+  .service-icon-wrap {
+    width: 52px; height: 52px;
+    background: var(--teal-10);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+  }
+  .service-icon-wrap svg { width: 28px; height: 28px; }
+  .service-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 15px;
+    color: var(--navy); margin-bottom: 8px;
+  }
+  .service-card p {
+    font-size: 13px; color: #6b7e90;
+    line-height: 1.6;
+  }
+  .service-card .card-stat {
+    margin-top: 18px; padding-top: 16px;
+    border-top: 1px solid var(--navy-06);
+    display: flex; align-items: baseline; gap: 6px;
+  }
+  .card-stat-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; font-size: 22px;
+    color: var(--teal);
+  }
+  .card-stat-label { font-size: 11px; color: #9aabb8; font-weight: 500; }
+
+  /* ─── KPI BADGES ─── */
+  .kpi-row { display: flex; flex-wrap: wrap; gap: 16px; }
+  .kpi-badge {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 20px 28px;
+    display: flex; flex-direction: column;
+    min-width: 160px;
+  }
+  .kpi-badge .kpi-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; font-size: 32px; line-height: 1;
+    color: #fff;
+  }
+  .kpi-badge .kpi-num .unit { font-size: 20px; color: var(--teal); }
+  .kpi-badge .kpi-desc {
+    font-size: 12px; color: rgba(255,255,255,0.45);
+    margin-top: 6px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .kpi-badge.teal { background: var(--teal); }
+  .kpi-badge.teal .kpi-num .unit { color: rgba(255,255,255,0.6); }
+  .kpi-badge.teal .kpi-desc { color: rgba(255,255,255,0.6); }
+  .kpi-badge.gold { background: var(--gold); }
+  .kpi-badge.gold .kpi-num { color: var(--navy); }
+  .kpi-badge.gold .kpi-num .unit { color: rgba(13,43,78,0.55); }
+  .kpi-badge.gold .kpi-desc { color: rgba(13,43,78,0.5); }
+  .kpi-badge.outline {
+    background: transparent;
+    border: 1.5px solid var(--navy-12);
+  }
+  .kpi-badge.outline .kpi-num { color: var(--navy); }
+  .kpi-badge.outline .kpi-num .unit { color: var(--teal); }
+  .kpi-badge.outline .kpi-desc { color: #9aabb8; }
+
+  /* ─── TRUST PILLS ─── */
+  .trust-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .trust-pill {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 7px 14px;
+    border-radius: 100px;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: default;
+  }
+  .trust-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .trust-pill.teal {
+    background: var(--teal-10);
+    color: var(--teal);
+    border: 1px solid rgba(10,140,116,0.2);
+  }
+  .trust-pill.navy {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+  }
+  .trust-pill.gold {
+    background: var(--gold-15);
+    color: #a07a1a;
+    border: 1px solid rgba(232,184,75,0.3);
+  }
+  .trust-pill.green {
+    background: rgba(45,158,107,0.10);
+    color: var(--green);
+    border: 1px solid rgba(45,158,107,0.20);
+  }
+  .trust-pill.outline {
+    background: transparent;
+    color: var(--navy);
+    border: 1.5px solid var(--navy-12);
+  }
+
+  /* ─── TESTIMONIAL ─── */
+  .testimonial-card {
+    background: #fff;
+    border: 1px solid var(--navy-06);
+    border-radius: 20px;
+    padding: 36px 40px;
+    position: relative;
+    max-width: 700px;
+  }
+  .testimonial-card::before {
+    content: '\201C';
+    position: absolute; top: 24px; left: 36px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 80px; line-height: 1;
+    color: var(--teal); opacity: 0.18;
+  }
+  .testimonial-quote {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600; font-size: 17px;
+    line-height: 1.6; color: var(--navy);
+    position: relative; z-index: 1;
+    padding-top: 12px;
+  }
+  .testimonial-author {
+    margin-top: 24px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .author-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal) 0%, #065e4d 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 15px; color: #fff;
+  }
+  .author-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 14px; color: var(--navy);
+  }
+  .author-role { font-size: 12px; color: #9aabb8; margin-top: 2px; }
+  .testimonial-rating {
+    margin-bottom: 16px;
+    display: flex; gap: 3px;
+  }
+  .star { color: var(--gold); font-size: 16px; }
+
+  /* ─── STEP TIMELINE ─── */
+  .timeline { display: flex; gap: 0; position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 26px; left: 26px; right: 26px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal) 0%, rgba(10,140,116,0.2) 100%);
+    z-index: 0;
+  }
+  .timeline-step {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    position: relative; z-index: 1;
+  }
+  .step-circle {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 0 0 6px rgba(10,140,116,0.12);
+  }
+  .step-circle.inactive {
+    background: #e8edf3;
+    box-shadow: none;
+  }
+  .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600; font-size: 15px; color: #fff;
+  }
+  .step-circle.inactive .step-num { color: #9aabb8; }
+  .step-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 13px;
+    color: var(--navy); margin-bottom: 6px;
+  }
+  .step-desc { font-size: 12px; color: #9aabb8; line-height: 1.5; max-width: 110px; }
+
+  /* ─── LOGO LOCKUP ─── */
+  .logo-section { display: flex; gap: 48px; align-items: flex-start; flex-wrap: wrap; }
+  .logo-variant {
+    display: flex; flex-direction: column; gap: 10px;
+    align-items: flex-start;
+  }
+  .logo-box {
+    padding: 28px 32px;
+    border-radius: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .logo-box.light { background: #fff; border: 1px solid var(--navy-06); }
+  .logo-box.dark { background: var(--navy); }
+  .logo-box.teal-bg { background: var(--teal); }
+  .logo-wordmark {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 22px; letter-spacing: -0.5px;
+  }
+  .logo-wordmark.dark-text { color: var(--navy); }
+  .logo-wordmark.dark-text span { color: var(--teal); }
+  .logo-wordmark.light-text { color: #fff; }
+  .logo-wordmark.light-text span { color: rgba(255,255,255,0.6); }
+  .logo-wordmark.teal-text { color: #fff; }
+  .logo-tagline {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .logo-tagline.sub-navy { color: #9aabb8; }
+  .logo-tagline.sub-white { color: rgba(255,255,255,0.4); }
+
+  .logo-icon {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ─── GRID HELPERS ─── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .component-block {
+    background: #fff; border: 1px solid var(--navy-06);
+    border-radius: 16px; padding: 32px;
+  }
+  .component-block-dark {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 32px;
+  }
+
+  /* ─── STATUS INDICATORS ─── */
+  .status-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .status-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 6px;
+    font-size: 12px; font-weight: 600;
+  }
+  .status-chip .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+  }
+  .status-chip.active { background: rgba(45,158,107,0.10); color: var(--green); }
+  .status-chip.active .dot { background: var(--green); }
+  .status-chip.pending { background: rgba(232,184,75,0.12); color: #a07a1a; }
+  .status-chip.pending .dot { background: var(--gold); }
+  .status-chip.denied { background: rgba(201,75,53,0.10); color: var(--red); }
+  .status-chip.denied .dot { background: var(--red); }
+  .status-chip.inactive { background: var(--navy-06); color: #9aabb8; }
+  .status-chip.inactive .dot { background: #c0ccd8; }
+
+  /* ─── SPACING SCALE ─── */
+  .spacing-row { display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  .spacing-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .spacing-bar {
+    width: 48px;
+    background: var(--teal-20);
+    border-top: 2px solid var(--teal);
+    border-radius: 2px;
+  }
+  .spacing-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--teal); font-weight: 500;
+  }
+  .spacing-name { font-size: 11px; color: #9aabb8; }
+</style>
+</head>
+<body>
+
+<!-- ─── STICKY NAV ─── -->
+<nav class="brand-nav">
+  <div class="logo-mark">Med<span>Versify</span></div>
+  <ul>
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#palette">Palette</a></li>
+    <li><a href="#type">Type</a></li>
+    <li><a href="#icons">Icons</a></li>
+    <li><a href="#components">Components</a></li>
+    <li><a href="#patterns">Patterns</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO COVER ─── -->
+<div class="hero-cover">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Brand Identity System · 2025</div>
+      <h1 class="hero-headline">The medical billing company that doesn't <em>look like one.</em></h1>
+      <p class="hero-sub">Authoritative but human. Data-confident, quietly reassuring. Built for practices that expect more from their revenue cycle partner.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary">Request a Demo</button>
+        <button class="btn btn-ghost-white">View Services</button>
+      </div>
+    </div>
+    <div class="hero-stat-cluster">
+      <div class="stat-card">
+        <div class="stat-num">98.7<span class="stat-unit">%</span></div>
+        <div class="stat-label">Clean Claim Rate</div>
+      </div>
+      <div class="stat-card gold-accent">
+        <div class="stat-num">$2.4<span class="stat-unit">M</span></div>
+        <div class="stat-label">Avg Revenue Recovered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">14<span class="stat-unit">d</span></div>
+        <div class="stat-label">Avg Days to Payment</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── LOGO ─── -->
+<div id="logo">
+  <div class="section">
+    <div class="section-label">01 — Identity</div>
+    <div class="section-title">Logo &amp; Wordmark</div>
+
+    <div class="logo-section">
+      <div class="logo-variant">
+        <span class="component-label">Light Background</span>
+        <div class="logo-box light">
+          <div class="logo-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="6" width="28" height="20" rx="4" stroke="#0D2B4E" stroke-width="1.8"/>
+              <path d="M9 16h3l2-5 3 10 2-7 2 3h2" stroke="#0A8C74" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="logo-wordmark dark-text">Med<span>Versify</span></div>
+            <div class="logo-tagline sub-navy">Healthcare Practice Management</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="logo-variant">
+        <span class="component-label">Dark Background</span>
+        <div class="logo-box dark">
+          <div class="logo-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="6" width="28" height="20" rx="4" stroke="rgba(255,255,255,0.7)" stroke-width="1.8"/>
+              <path d="M9 16h3l2-5 3 10 2-7 2 3h2" stroke="#0A8C74" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="logo-wordmark light-text">Med<span>Versify</span></div>
+            <div class="logo-tagline sub-white">Healthcare Practice Management</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="logo-variant">
+        <span class="component-label">Teal Background</span>
+        <div class="logo-box teal-bg">
+          <div class="logo-icon">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="6" width="28" height="20" rx="4" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/>
+              <path d="M9 16h3l2-5 3 10 2-7 2 3h2" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="logo-wordmark teal-text">Med<span>Versify</span></div>
+            <div class="logo-tagline sub-white">Healthcare Practice Management</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ─── PALETTE ─── -->
+<div id="palette">
+  <div class="section">
+    <div class="section-label">02 — Color</div>
+    <div class="section-title">Palette</div>
+    <div class="palette-grid">
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#0D2B4E;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Deep Navy</div>
+          <div class="swatch-hex">#0D2B4E</div>
+          <div class="swatch-role">Primary ink, headlines</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#F7F9FC; border: 1px solid #e8edf3;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Off-White</div>
+          <div class="swatch-hex">#F7F9FC</div>
+          <div class="swatch-role">Page background, paper</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#0A8C74;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Brand Teal</div>
+          <div class="swatch-hex">#0A8C74</div>
+          <div class="swatch-role">Brand accent, CTAs, icons</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#E8B84B;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Warm Gold</div>
+          <div class="swatch-hex">#E8B84B</div>
+          <div class="swatch-role">Premium highlight, ratings</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#2D9E6B;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Success Green</div>
+          <div class="swatch-hex">#2D9E6B</div>
+          <div class="swatch-role">Approved, paid, active</div>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#C94B35;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Alert Red</div>
+          <div class="swatch-hex">#C94B35</div>
+          <div class="swatch-role">Denied, errors, warnings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ─── TYPOGRAPHY ─── -->
+<div id="type">
+  <div class="section">
+    <div class="section-label">03 — Typography</div>
+    <div class="section-title">Type System</div>
+
+    <div class="type-stack">
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="font-name">Montserrat</div>
+          <div class="font-use">Display · Weight 800</div>
+        </div>
+        <div class="type-sample display">Revenue you earned,<br>actually collected.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="font-name">Montserrat</div>
+          <div class="font-use">Heading · Weight 700</div>
+        </div>
+        <div class="type-sample heading">Medical Billing &amp; Credentialing Services</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="font-name">Inter</div>
+          <div class="font-use">Body · Weight 400</div>
+        </div>
+        <div class="type-sample body-copy">We handle the complexity of billing, credentialing, and compliance so your practice can focus on what matters — patient care. Our team brings precision and transparency to every claim, every time.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="font-name">Inter</div>
+          <div class="font-use">UI Label · Weight 500</div>
+        </div>
+        <div class="type-sample label">Clean Claim Rate &nbsp;·&nbsp; Days to Payment &nbsp;·&nbsp; Denial Rate &nbsp;·&nbsp; MIPS Score</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="font-name">JetBrains Mono</div>
+          <div class="font-use">KPI / Stats · Weight 600</div>
+        </div>
+        <div class="type-sample mono">98.7<span>%</span> &nbsp; $2.4M &nbsp; 14d</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ─── ICONS ─── -->
+<div id="icons">
+  <div class="section">
+    <div class="section-label">04 — Iconography</div>
+    <div class="section-title">Medical Domain Icons</div>
+
+    <span class="component-label">Teal on light — 40×40, 1.5px stroke, rounded caps</span>
+    <div class="icons-grid">
+
+      <!-- Medical Billing -->
+      <div class="icon-card">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="5" width="24" height="30" rx="3" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="13" y1="13" x2="27" y2="13" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="13" y1="17" x2="22" y2="17" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M13 25h2l1.5-4 2 7 1.5-5 1.5 2H25" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="icon-label">Medical Billing</div>
+      </div>
+
+      <!-- Credentialing -->
+      <div class="icon-card">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4L8 9v10c0 7.5 5.2 13.5 12 15 6.8-1.5 12-7.5 12-15V9L20 4z" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 20l4 4 8-8" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="icon-label">Credentialing</div>
+      </div>
+
+      <!-- MIPS Reporting -->
+      <div class="icon-card">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="26" width="6" height="9" rx="1.5" stroke="#0A8C74" stroke-width="1.5"/>
+          <rect x="17" y="18" width="6" height="17" rx="1.5" stroke="#0A8C74" stroke-width="1.5"/>
+          <rect x="28" y="10" width="6" height="25" rx="1.5" stroke="#0A8C74" stroke-width="1.5"/>
+          <path d="M6 20l8-6 8-4 8-5" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.5 2"/>
+          <path d="M22 10l4-4" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M26 5h4v4" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="icon-label">MIPS Reporting</div>
+      </div>
+
+      <!-- Patient Scheduling -->
+      <div class="icon-card">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="28" height="26" rx="3" stroke="#0A8C74" stroke-width="1.5"/>
+          <line x1="6" y1="18" x2="34" y2="18" stroke="#0A8C74" stroke-width="1.5"/>
+          <line x1="14" y1="6" x2="14" y2="14" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="26" y1="6" x2="26" y2="14" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="20" y1="23" x2="20" y2="31" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="16" y1="27" x2="24" y2="27" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="icon-label">Patient Scheduling</div>
+      </div>
+
+      <!-- Compliance -->
+      <div class="icon-card">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="4" width="24" height="32" rx="3" stroke="#0A8C74" stroke-width="1.5"/>
+          <line x1="13" y1="13" x2="27" y2="13" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="13" y1="18" x2="27" y2="18" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M13 26l3 3 7-7" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="icon-label">Compliance</div>
+      </div>
+
+      <!-- Revenue Cycle -->
+      <div class="icon-card">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 8a12 12 0 1 1-8.5 3.5" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8 6l3.5 5.5L7 14" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 14v2m0 8v2" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M17 18.5c0-1.4 1.3-2.5 3-2.5s3 1.1 3 2.5-1.3 2.5-3 2.5-3 1.1-3 2.5 1.3 2.5 3 2.5 3-1.1 3-2.5" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="icon-label">Revenue Cycle</div>
+      </div>
+
+      <!-- Insurance -->
+      <div class="icon-card">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 20c0 8 5 14 12 16 7-2 12-8 12-16V10c-4 0-8-2-12-4C16 8 12 10 8 10v10z" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="20" y1="16" x2="20" y2="24" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="16" y1="20" x2="24" y2="20" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="icon-label">Insurance</div>
+      </div>
+
+      <!-- EHR Integration -->
+      <div class="icon-card">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="8" width="32" height="22" rx="3" stroke="#0A8C74" stroke-width="1.5"/>
+          <line x1="14" y1="34" x2="26" y2="34" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="20" y1="30" x2="20" y2="34" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M7 21h4l2-6 3 12 2.5-8L21 21h4l2-3 2 3h3" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="icon-label">EHR Integration</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:16px;">
+      <span class="component-label">White on dark — same icons on navy</span>
+    </div>
+    <div class="icons-dark-row" style="background:var(--navy); border-radius:16px; padding:24px 20px;">
+
+      <div class="icon-card-dark">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="5" width="24" height="30" rx="3" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="13" x2="27" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="17" x2="22" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M13 25h2l1.5-4 2 7 1.5-5 1.5 2H25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="icon-label">Medical Billing</div>
+      </div>
+      <div class="icon-card-dark">
+        <svg viewBox="0 0 40 40" fill="none"><path d="M20 4L8 9v10c0 7.5 5.2 13.5 12 15 6.8-1.5 12-7.5 12-15V9L20 4z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 20l4 4 8-8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="icon-label">Credentialing</div>
+      </div>
+      <div class="icon-card-dark">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="26" width="6" height="9" rx="1.5" stroke="white" stroke-width="1.5"/><rect x="17" y="18" width="6" height="17" rx="1.5" stroke="white" stroke-width="1.5"/><rect x="28" y="10" width="6" height="25" rx="1.5" stroke="white" stroke-width="1.5"/><path d="M6 20l8-6 8-4 8-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.5 2"/><path d="M22 10l4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M26 5h4v4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="icon-label">MIPS Reporting</div>
+      </div>
+      <div class="icon-card-dark">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="26" rx="3" stroke="white" stroke-width="1.5"/><line x1="6" y1="18" x2="34" y2="18" stroke="white" stroke-width="1.5"/><line x1="14" y1="6" x2="14" y2="14" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="26" y1="6" x2="26" y2="14" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="20" y1="23" x2="20" y2="31" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="27" x2="24" y2="27" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="icon-label">Patient Scheduling</div>
+      </div>
+      <div class="icon-card-dark">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="4" width="24" height="32" rx="3" stroke="white" stroke-width="1.5"/><line x1="13" y1="13" x2="27" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="18" x2="27" y2="18" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M13 26l3 3 7-7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="icon-label">Compliance</div>
+      </div>
+      <div class="icon-card-dark">
+        <svg viewBox="0 0 40 40" fill="none"><path d="M20 8a12 12 0 1 1-8.5 3.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M8 6l3.5 5.5L7 14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 14v2m0 8v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M17 18.5c0-1.4 1.3-2.5 3-2.5s3 1.1 3 2.5-1.3 2.5-3 2.5-3 1.1-3 2.5 1.3 2.5 3 2.5 3-1.1 3-2.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="icon-label">Revenue Cycle</div>
+      </div>
+      <div class="icon-card-dark">
+        <svg viewBox="0 0 40 40" fill="none"><path d="M8 20c0 8 5 14 12 16 7-2 12-8 12-16V10c-4 0-8-2-12-4C16 8 12 10 8 10v10z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="20" y1="16" x2="20" y2="24" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="20" x2="24" y2="20" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="icon-label">Insurance</div>
+      </div>
+      <div class="icon-card-dark">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="22" rx="3" stroke="white" stroke-width="1.5"/><line x1="14" y1="34" x2="26" y2="34" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="20" y1="30" x2="20" y2="34" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M7 21h4l2-6 3 12 2.5-8L21 21h4l2-3 2 3h3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="icon-label">EHR Integration</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ─── COMPONENTS ─── -->
+<div id="components">
+  <div class="section">
+    <div class="section-label">05 — Components</div>
+    <div class="section-title">UI Components</div>
+
+    <!-- BUTTONS -->
+    <div class="component-group">
+      <span class="component-label">Button System</span>
+      <div class="btn-row" style="margin-bottom:14px;">
+        <button class="btn btn-primary">Primary Action</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-ghost">Ghost / Outline</button>
+        <button class="btn btn-gold">Premium Upgrade</button>
+        <button class="btn btn-destructive">Deny Claim</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary btn-sm">Small Primary</button>
+        <button class="btn btn-ghost btn-sm">Small Ghost</button>
+        <button class="btn btn-primary btn-lg">Large CTA</button>
+        <button class="btn btn-secondary" style="opacity:.38; cursor:not-allowed;">Disabled</button>
+      </div>
+    </div>
+
+    <!-- INPUTS -->
+    <div class="component-group">
+      <span class="component-label">Input Fields</span>
+      <div class="input-row">
+        <div class="field-group">
+          <label class="field-label">Provider NPI Number</label>
+          <input class="field-input" type="text" placeholder="1234567890">
+          <span class="field-hint default">10-digit NPI required</span>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Practice Name</label>
+          <input class="field-input success" type="text" value="Lakewood Family Medicine">
+          <span class="field-hint success">✓ Verified in NPPES registry</span>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Payer ID</label>
+          <input class="field-input error" type="text" value="BCBS-0X">
+          <span class="field-hint error">Invalid payer ID format</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="component-group">
+      <span class="component-label">Claim Status Chips</span>
+      <div class="status-row">
+        <span class="status-chip active"><span class="dot"></span>Paid</span>
+        <span class="status-chip active"><span class="dot"></span>Credentialed</span>
+        <span class="status-chip pending"><span class="dot"></span>Pending Review</span>
+        <span class="status-chip pending"><span class="dot"></span>Awaiting Response</span>
+        <span class="status-chip denied"><span class="dot"></span>Denied</span>
+        <span class="status-chip denied"><span class="dot"></span>Rejected</span>
+        <span class="status-chip inactive"><span class="dot"></span>Inactive</span>
+        <span class="status-chip inactive"><span class="dot"></span>Draft</span>
+      </div>
+    </div>
+
+    <!-- TRUST PILLS -->
+    <div class="component-group">
+      <span class="component-label">Trust Pill Chips</span>
+      <div class="trust-row">
+        <span class="trust-pill teal">
+          <svg viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4.5c0 3 2 5 5 6 3-1 5-3 5-6V3.5L7 1z" stroke="#0A8C74" stroke-width="1.4" stroke-linecap="round"/><path d="M4.5 7l2 2 3-3" stroke="#0A8C74" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          HIPAA Compliant
+        </span>
+        <span class="trust-pill teal">
+          <svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#0A8C74" stroke-width="1.4"/><path d="M4.5 7l2 2 3-3" stroke="#0A8C74" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          SOC 2 Certified
+        </span>
+        <span class="trust-pill navy">
+          <svg viewBox="0 0 14 14" fill="none"><rect x="2" y="4" width="10" height="8" rx="1.5" stroke="white" stroke-width="1.3"/><path d="M5 4V3a2 2 0 0 1 4 0v1" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg>
+          256-bit Encryption
+        </span>
+        <span class="trust-pill gold">
+          <svg viewBox="0 0 14 14" fill="none"><path d="M7 1l1.5 3.5L12 5l-2.5 2.5.5 3.5L7 9.5 4 11l.5-3.5L2 5l3.5-.5L7 1z" stroke="#a07a1a" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          MGMA Recognized
+        </span>
+        <span class="trust-pill green">
+          <svg viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="#2D9E6B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          98.7% Clean Claims
+        </span>
+        <span class="trust-pill outline">CMS Approved</span>
+        <span class="trust-pill outline">HL7 FHIR Ready</span>
+      </div>
+    </div>
+
+    <!-- KPI BADGES -->
+    <div class="component-group">
+      <span class="component-label">KPI / Stat Badges</span>
+      <div class="kpi-row">
+        <div class="kpi-badge">
+          <div class="kpi-num">98.7<span class="unit">%</span></div>
+          <div class="kpi-desc">Clean Claim Rate</div>
+        </div>
+        <div class="kpi-badge teal">
+          <div class="kpi-num">$2.4<span class="unit">M</span></div>
+          <div class="kpi-desc">Revenue Recovered</div>
+        </div>
+        <div class="kpi-badge gold">
+          <div class="kpi-num">14<span class="unit">d</span></div>
+          <div class="kpi-desc">Days to Payment</div>
+        </div>
+        <div class="kpi-badge outline">
+          <div class="kpi-num">99<span class="unit">+</span></div>
+          <div class="kpi-desc">Specialties Served</div>
+        </div>
+        <div class="kpi-badge outline">
+          <div class="kpi-num">0.3<span class="unit">%</span></div>
+          <div class="kpi-desc">Denial Rate</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ─── PATTERNS ─── -->
+<div id="patterns">
+
+  <!-- SERVICE CARDS (dark section) -->
+  <div class="section-dark-wrap">
+    <div class="section" style="max-width:1200px; margin:0 auto; padding:80px 40px;">
+      <div class="section-label" style="color:rgba(10,140,116,0.85);">06 — Patterns</div>
+      <div class="section-title" style="color:#fff; margin-bottom:40px;">Service Cards</div>
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="5" width="24" height="30" rx="3" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="13" x2="27" y2="13" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="17" x2="22" y2="17" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/><path d="M13 25h2l1.5-4 2 7 1.5-5 1.5 2H25" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Medical Billing</h3>
+          <p>Full-cycle claim submission, follow-up, and payment posting across all major payers.</p>
+          <div class="card-stat">
+            <div class="card-stat-num">98.7%</div>
+            <div class="card-stat-label">clean claim rate</div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M20 4L8 9v10c0 7.5 5.2 13.5 12 15 6.8-1.5 12-7.5 12-15V9L20 4z" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 20l4 4 8-8" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Credentialing</h3>
+          <p>Provider enrollment and re-credentialing with all major payers. Avg 18-day turnaround.</p>
+          <div class="card-stat">
+            <div class="card-stat-num">18d</div>
+            <div class="card-stat-label">avg turnaround</div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="26" width="6" height="9" rx="1.5" stroke="#0A8C74" stroke-width="1.5"/><rect x="17" y="18" width="6" height="17" rx="1.5" stroke="#0A8C74" stroke-width="1.5"/><rect x="28" y="10" width="6" height="25" rx="1.5" stroke="#0A8C74" stroke-width="1.5"/><path d="M6 20l8-6 8-4 8-5" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.5 2"/><path d="M22 10l4-4" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/><path d="M26 5h4v4" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>MIPS Reporting</h3>
+          <p>Maximize your QPP composite score with accurate, on-time MIPS data submission.</p>
+          <div class="card-stat">
+            <div class="card-stat-num">100%</div>
+            <div class="card-stat-label">on-time filing rate</div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="26" rx="3" stroke="#0A8C74" stroke-width="1.5"/><line x1="6" y1="18" x2="34" y2="18" stroke="#0A8C74" stroke-width="1.5"/><line x1="14" y1="6" x2="14" y2="14" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/><line x1="26" y1="6" x2="26" y2="14" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/><line x1="20" y1="23" x2="20" y2="31" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="27" x2="24" y2="27" stroke="#0A8C74" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Patient Scheduling</h3>
+          <p>Integrated appointment management with automated reminders and eligibility verification.</p>
+          <div class="card-stat">
+            <div class="card-stat-num">42%</div>
+            <div class="card-stat-label">reduction in no-shows</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL + TIMELINE -->
+  <div class="section" style="padding-top: 80px;">
+
+    <div class="two-col" style="margin-bottom: 60px;">
+      <div>
+        <span class="component-label">Testimonial Card</span>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <div class="testimonial-quote">
+            "MedVersify turned our 34-day collection cycle into 11 days. Their team understood our specialty from day one — no ramp-up, no excuses."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">DR</div>
+            <div>
+              <div class="author-name">Dr. Rachel Nwosu</div>
+              <div class="author-role">Medical Director, Evergreen Orthopedics · Chicago, IL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="component-label">Spacing Scale</span>
+        <div class="component-block">
+          <div class="spacing-row">
+            <div class="spacing-item">
+              <div class="spacing-bar" style="height:4px;"></div>
+              <div class="spacing-val">4</div>
+              <div class="spacing-name">xs</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-bar" style="height:8px;"></div>
+              <div class="spacing-val">8</div>
+              <div class="spacing-name">sm</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-bar" style="height:12px;"></div>
+              <div class="spacing-val">12</div>
+              <div class="spacing-name">md</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-bar" style="height:16px;"></div>
+              <div class="spacing-val">16</div>
+              <div class="spacing-name">lg</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-bar" style="height:24px;"></div>
+              <div class="spacing-val">24</div>
+              <div class="spacing-name">xl</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-bar" style="height:32px;"></div>
+              <div class="spacing-val">32</div>
+              <div class="spacing-name">2xl</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-bar" style="height:48px;"></div>
+              <div class="spacing-val">48</div>
+              <div class="spacing-name">3xl</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-bar" style="height:64px;"></div>
+              <div class="spacing-val">64</div>
+              <div class="spacing-name">4xl</div>
+            </div>
+            <div class="spacing-item">
+              <div class="spacing-bar" style="height:80px;"></div>
+              <div class="spacing-val">80</div>
+              <div class="spacing-name">5xl</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP TIMELINE -->
+    <span class="component-label">Step Timeline — Onboarding Flow</span>
+    <div class="component-block" style="margin-top: 0;">
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="step-circle"><span class="step-num">01</span></div>
+          <div class="step-title">Discovery Call</div>
+          <div class="step-desc">Review current billing workflow and payer mix</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-circle"><span class="step-num">02</span></div>
+          <div class="step-title">Credentialing Audit</div>
+          <div class="step-desc">Verify all payer contracts and enrollment status</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-circle"><span class="step-num">03</span></div>
+          <div class="step-title">System Integration</div>
+          <div class="step-desc">Connect your EHR and practice management software</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-circle"><span class="step-num">04</span></div>
+          <div class="step-title">Go Live</div>
+          <div class="step-desc">First claims submitted within 5 business days</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-circle inactive"><span class="step-num">05</span></div>
+          <div class="step-title">Ongoing Reporting</div>
+          <div class="step-desc">Monthly KPI dashboards and quarterly review calls</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<div style="background: var(--navy); padding: 40px; text-align: center;">
+  <div style="font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; color:#fff; letter-spacing:-0.3px; margin-bottom:8px;">
+    Med<span style="color:var(--teal);">Versify</span>
+  </div>
+  <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:rgba(255,255,255,0.28); letter-spacing:0.14em; text-transform:uppercase;">
+    Brand Identity System · Confidential · 2025
+  </div>
+</div>
+
+<script>
+  // Tweaks
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accentColor": "#0A8C74",
+    "highlightColor": "#E8B84B",
+    "primaryInk": "#0D2B4E",
+    "fontHeading": "Montserrat",
+    "darkHero": true
+  }/*EDITMODE-END*/;
+
+  let tweakPanel = null;
+
+  function applyTweaks(t) {
+    document.documentElement.style.setProperty('--teal', t.accentColor);
+    document.documentElement.style.setProperty('--navy', t.primaryInk);
+    document.documentElement.style.setProperty('--gold', t.highlightColor);
+  }
+
+  applyTweaks(TWEAK_DEFAULTS);
+
+  function buildPanel() {
+    if (tweakPanel) return;
+    tweakPanel = document.createElement('div');
+    tweakPanel.style.cssText = `
+      position:fixed; bottom:24px; right:24px; z-index:9999;
+      background:#fff; border:1px solid rgba(13,43,78,0.12);
+      border-radius:14px; padding:20px 22px; width:240px;
+      box-shadow:0 8px 32px rgba(13,43,78,0.15);
+      font-family:'Inter',sans-serif;
+    `;
+    tweakPanel.innerHTML = `
+      <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:#0D2B4E;margin-bottom:14px;letter-spacing:-0.2px;">Tweaks</div>
+      ${colorRow('accentColor','Brand Teal', TWEAK_DEFAULTS.accentColor)}
+      ${colorRow('primaryInk','Primary Ink', TWEAK_DEFAULTS.primaryInk)}
+      ${colorRow('highlightColor','Gold Highlight', TWEAK_DEFAULTS.highlightColor)}
+    `;
+    document.body.appendChild(tweakPanel);
+
+    tweakPanel.querySelectorAll('input[type=color]').forEach(inp => {
+      inp.addEventListener('input', () => {
+        const key = inp.dataset.key;
+        TWEAK_DEFAULTS[key] = inp.value;
+        applyTweaks(TWEAK_DEFAULTS);
+        window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: inp.value } }, '*');
+      });
+    });
+  }
+
+  function colorRow(key, label, val) {
+    return `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <span style="font-size:12px;color:#6b7e90;">${label}</span>
+      <input type="color" data-key="${key}" value="${val}" style="width:32px;height:26px;border:none;border-radius:6px;cursor:pointer;padding:0;">
+    </div>`;
+  }
+
+  window.addEventListener('message', e => {
+    if (e.data?.type === '__activate_edit_mode') { buildPanel(); tweakPanel.style.display = 'block'; }
+    if (e.data?.type === '__deactivate_edit_mode' && tweakPanel) tweakPanel.style.display = 'none';
+  });
+  window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+</script>
+
+</body>
+</html>
